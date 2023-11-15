@@ -15,12 +15,12 @@ Ce projet est une application web Spring Boot pour gérer un site d'ecommerce.
 - Spring Boot
 - Thymeleaf (pour les pages HTML)
 - Bootstrap (pour le style)
-- MySQL (ou une autre base de données de votre choix)
+- Hibernate
 
 ## Comment exécuter le projet
 
 1. Assurez-vous d'avoir une base de données configurée.
-2. Clonez le projet : `git clone https://github.com/votre-utilisateur/BazarWeb.git`
+2. Clonez le projet : `git clone https://github.com/Le-7/BazarWeb.git`
 3. Ouvrez le projet dans votre IDE.
 4. Configurez les détails de la base de données dans `src/main/resources/application.properties`.
 5. Exécutez l'application depuis votre IDE ou utilisez Maven : `mvn spring-boot:run`.
