@@ -2,7 +2,7 @@
 
 Bienvenue dans le projet BazarWeb ! 🌐
 
-Ce projet est une application web Spring Boot pour gérer une liste de produits. Ajoutez des produits, affichez-les et supprimez-les facilement.
+Ce projet est une application web Spring Boot pour gérer un site d'ecommerce. 
 
 ## Fonctionnalités
 
