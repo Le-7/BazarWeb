@@ -1,0 +1,105 @@
+/* Reset some default styles */
+body, h1, h2, ul, li, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    animation: fadeIn 0.5s ease-in-out; /* Fade in effect */
+}
+
+.container {
+    max-width: 800px;
+    margin: 10% auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-in-out; /* Slide in effect */
+}
+
+h1, h2 {
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow */
+}
+
+form {
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-in-out; /* Fade in effect */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, button {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Optional: Add some spacing around the delete button */
+form {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* Optional: Style the delete button */
+form button {
+    background-color: #dc3545;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Box shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+form button:hover {
+    background-color: #bd2130;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Box shadow on hover */
+}
+
+/* Banner and Footer */
+.banner, .footer {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.banner {
+    top: 0;
+    background-color: #1C1C1E;
+    color: #fff;
+}
+
+.footer {
+    bottom: 0;
+    background-color: #1C1C1E;
+    color: #fff;
+}
