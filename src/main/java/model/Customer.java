@@ -26,6 +26,11 @@ public class Customer {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	public Customer(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
 	public Customer(Long id, String username, String password, String email) {
 		super();
 		this.id = id;
