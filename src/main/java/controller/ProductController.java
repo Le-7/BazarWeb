@@ -31,7 +31,7 @@ public class ProductController {
         productService.addProduct(newProduct);
 
         // Redirect to the home page after adding the product
-        return "redirect:/";
+        return "redirect:/product/product";
     }
     
     @PostMapping("/delete-product")
@@ -40,9 +40,9 @@ public class ProductController {
         productService.deleteProduct(productId);
 
         // Redirect to the home page after deleting the product
-        return "redirect:/";
+        return "redirect:/product/product";
     }
-    @GetMapping("/")
+    @GetMapping("/product")
     public String showProducts(Model model) {
         List<Product> products = productService.getAllProducts();
         model.addAttribute("products", products);

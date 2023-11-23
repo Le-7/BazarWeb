@@ -13,7 +13,7 @@
 <div class="container">
     <!-- Add Product Form -->
     <h2>Add Product</h2>
-    <form action="/add-product" method="post">
+    <form action="/product/add-product" method="post">
         <label for="productName">Product Name:</label>
         <input type="text" id="productName" name="productName" required>
         <br>
@@ -32,7 +32,7 @@
             <li>
                 <span th:text="${product.name}"></span> - <span th:text="${product.price}"></span>
                 <!-- Add a form to trigger the deletion -->
-                <form action="/delete-product" method="post">
+                <form action="/product/delete-product" method="post">
                     <input type="hidden" name="productId" th:value="${product.id}" />
                     <button type="submit" class="delete-button">Delete</button>
                 </form>
