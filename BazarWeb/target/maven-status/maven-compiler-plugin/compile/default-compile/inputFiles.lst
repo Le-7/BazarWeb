@@ -5,6 +5,7 @@
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/model/Order.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/BazarWeb.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/repository/ModeratorRepository.java
+/home/cytech/eclipse-workspace/BazarWeb/src/main/java/controller/HomeController.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/service/ModeratorService.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/service/OrderService.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/repository/OrderRepository.java
