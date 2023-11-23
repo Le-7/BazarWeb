@@ -26,6 +26,19 @@ public class Customer {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	public Customer(Long id, String username, String password, String email) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.email = email;
+	}
+	public Customer(String username, String password, String email) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.email = email;
+	}
 	public String getPassword() {
 		return password;
 	}
