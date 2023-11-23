@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BazarWeb</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<header class="banner">
+		<div class="top-nav">
+			<div class="logo">BazarWeb</div>
+			<div class="search-bar">
+				<input type="text" placeholder="Rechercher des produits">
+				<button type="button">Rechercher</button>
+			</div>
+			<div class="user-actions">
+				<a href="#">Mon Compte</a> <a href="#">Panier</a>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="#">Accueil</a></li>
+				<li><a href="#">Catégories</a></li>
+				<li><a href="#">Meilleures ventes</a></li>
+				<li><a href="#">Offres spéciales</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section class="featured-products">
+			<h2>Produits en Vedette</h2>
+			<div class="product-list">
+				<div class="product">
+					<img src="https://www.mangamag.fr/wp-content/uploads/2023/09/one-piece-luffy-gear-5-1-scaled.jpg" alt="Product 1">
+					<h3>Nom du Produit 1</h3>
+					<p>Description du produit 1.</p>
+					<span class="price">$19.99</span>
+					<button type="button">Ajouter au Panier</button>
+				</div>
+
+				<div class="product">
+					<img src="https://www.presse-citron.net/app/uploads/2021/06/fifa-22-logo-beta-fuite.jpg" alt="Product 2">
+					<h3>Nom du Produit 2</h3>
+					<p>Description du produit 2.</p>
+					<span class="price">$29.99</span>
+					<button type="button">Ajouter au Panier</button>
+				</div>
+			</div>
+		</section>
+
+		<section class="categories">
+			<h2>Parcourir les Catégories</h2>
+			<div class="category-list">
+				<div class="category">
+					<img src="https://www.lenouveleconomiste.fr/wp-content/uploads/2023/03/videogames-web-826x459.jpg" alt="Category 1">
+					<h3>Catégorie 1</h3>
+					<p>Description de la catégorie 1.</p>
+					<a href="#">Voir les produits</a>
+				</div>
+
+				<div class="category">
+					<img src="https://media.lesechos.com/api/v1/images/view/5f60d9d1d286c26daa75a1c5/1280x720/0603889249631-web-tete.jpg" alt="Category 2">
+					<h3>Catégorie 2</h3>
+					<p>Description de la catégorie 2.</p>
+					<a href="#">Voir les produits</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="footer-content">
+			<div class="footer-section">
+				<h3>À Propos</h3>
+				<p>Notre entreprise</p>
+				<p>Carrières</p>
+				<p>Contactez-nous</p>
+			</div>
+			<div class="footer-section">
+				<h3>Services</h3>
+				<p>Livraison</p>
+				<p>Retours</p>
+				<p>Aide en ligne</p>
+			</div>
+			<div class="footer-section">
+				<h3>Informations Légales</h3>
+				<p>Conditions d'utilisation</p>
+				<p>Politique de confidentialité</p>
+			</div>
+		</div>
+		<div class="copyright">
+			<p>2023 BazarWeb Tous droits réservés.</p>
+		</div>
+	</footer>
+
+</body>
+</html>
