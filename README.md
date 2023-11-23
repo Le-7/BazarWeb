@@ -23,7 +23,8 @@ Ce projet est une application web Spring Boot pour gérer un site d'ecommerce.
 2. Clonez le projet : `git clone https://github.com/Le-7/BazarWeb.git`
 3. Ouvrez le projet dans votre IDE.
 4. Configurez les détails de la base de données dans `src/main/resources/application.properties`.
-5. Exécutez l'application depuis votre IDE ou utilisez Maven : `mvn spring-boot:run`.
+5. Allez à la racine du projet via un terminal puis exécutez : `./mvnw clean install -U` 
+6. Exécutez l'application depuis votre terminal : `./mvnw spring-boot:run`.
 
 ## Comment contribuer
 
