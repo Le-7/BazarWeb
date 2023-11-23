@@ -29,5 +29,3 @@ Si vous souhaitez contribuer à ce projet, suivez ces étapes :
 3. Faites vos modifications et commit : `git commit -m "Ajout de fonctionnalité incroyable"`.
 4. Push vers votre fork : `git push origin fonctionnalite-incroyable`.
 5. Créez une Pull Request.
-
-Merci de contribuer ! 🚀
