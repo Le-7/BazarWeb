@@ -1,10 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BazarWeb</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
 </head>
 <body>
-<h1> Bravo vous êtes bien connecté ! </h1>
+	<header class="banner">
+		<div class="top-nav">
+			<div class="logo">BazarWeb</div>
+			<div class="search-bar">
+				<input type="text" placeholder="Rechercher des produits">
+				<button type="button">Rechercher</button>
+			</div>
+			<div class="user-actions">
+				<a href="#">Mon Compte</a> <a href="#">Panier</a>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="#">Accueil</a></li>
+				<li><a href="#">Catégories</a></li>
+				<li><a href="#">Meilleures ventes</a></li>
+				<li><a href="#">Offres spéciales</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section class="featured-products">
+			<p> Merci de vous etes connect&eacute; ! </p>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="footer-content">
+			<div class="footer-section">
+				<h3>À Propos</h3>
+				<p>Notre entreprise</p>
+				<p>Carrières</p>
+				<p>Contactez-nous</p>
+			</div>
+			<div class="footer-section">
+				<h3>Services</h3>
+				<p>Livraison</p>
+				<p>Retours</p>
+				<p>Aide en ligne</p>
+			</div>
+			<div class="footer-section">
+				<h3>Informations Légales</h3>
+				<p>Conditions d'utilisation</p>
+				<p>Politique de confidentialité</p>
+			</div>
+		</div>
+		<div class="copyright">
+			<p>2023 BazarWeb Tous droits réservés.</p>
+		</div>
+	</footer>
+
 </body>
 </html>

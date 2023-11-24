@@ -21,7 +21,7 @@ public class CustomerService {
 
     @Autowired
     public CustomerService(CustomerRepository customerRepository) {
-        this.customerRepository = customerRepository;
+        CustomerService.customerRepository = customerRepository;
     }
 
     public void inscriptionCustomer(Customer customer) {
@@ -37,7 +37,7 @@ public class CustomerService {
 
     // Other methods...
 
-    public static boolean connectionCustomer(String username, String password) {
+    public boolean connectionCustomer(String username, String password) {
         // Check if a customer with the given username and password exists in the database
         Optional<Customer> optionalCustomer = customerRepository.findByUsernameAndPassword(username, password);
 

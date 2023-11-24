@@ -1,7 +1,12 @@
 package service;
 public class DuplicateUsernameException extends RuntimeException {
 
-    public DuplicateUsernameException(String message) {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public DuplicateUsernameException(String message) {
         super(message);
     }
 }

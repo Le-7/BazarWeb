@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connection BazarWeb</title>
-  <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BazarWeb</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
 </head>
 <body>
-<header class="banner">
+	<header class="banner">
 		<div class="top-nav">
 			<div class="logo">BazarWeb</div>
 			<div class="search-bar">
@@ -27,23 +27,17 @@
 			</ul>
 		</nav>
 	</header>
-<div class="container">
-    <h2>Connectez Vous ! </h2>
-    <form action="/customer/connected" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password"  required>
-        <br>
-            
-        
-        <button type="submit">Connexion</button>
-    </form>
 
- 
-    </div>
-    <footer class="footer">
+	<main>
+
+		<section class="inscription-confirmation">
+			<h2>Inscription réussie !</h2>
+			<p>
+				Merci de vous être inscrit, <span th:text="${username}"></span> !
+			</p>
+		</section>
+	</main>
+	<footer class="footer">
 		<div class="footer-content">
 			<div class="footer-section">
 				<h3>À Propos</h3>
@@ -67,5 +61,7 @@
 			<p>2023 BazarWeb Tous droits réservés.</p>
 		</div>
 	</footer>
+
+
 </body>
 </html>
