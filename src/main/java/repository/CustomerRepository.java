@@ -11,5 +11,6 @@ import model.Customer;
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
     // custom queries if needed
     Optional<Customer> findByUsernameAndPassword(String username, String password);
+    boolean existsByUsername(String username);
 }
 

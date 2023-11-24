@@ -25,7 +25,11 @@ public class CustomerService {
     }
 
     public void inscriptionCustomer(Customer customer) {
- 
+    	
+    	if (customerRepository.existsByUsername(customer.getUsername())) {
+            throw new DuplicateUsernameException("Username already exists: " + customer.getUsername());
+        }
+
     	customerRepository.save(customer);
     }
     

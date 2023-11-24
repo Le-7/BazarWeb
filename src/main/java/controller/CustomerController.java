@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import service.DuplicateUsernameException;
 
 import model.Customer;
 import service.CustomerService;
@@ -25,24 +26,27 @@ public class CustomerController {
 	}
 
 	@PostMapping("/inscris")
-	public String addCustomer(@RequestParam String username, @RequestParam String password, @RequestParam String mail) {
-		// Create a new product instance
-		Customer newCustomer = new Customer(username, password, mail);
+	public String addCustomer(@RequestParam String username, @RequestParam String password, @RequestParam String mail, Model model) {
+		try {
+            // Create a new customer instance
+            Customer newCustomer = new Customer(username, password, mail);
 
-		// Add the user to the database
-		customerService.inscriptionCustomer(newCustomer);
+            // Add the customer to the database
+            customerService.inscriptionCustomer(newCustomer);
 
-		// Redirect to the signup page after the signup
-		return "inscription";
+            model.addAttribute("username", username);
+
+            // Redirect to the signup page after the signup
+            return "inscris";
+        } catch (DuplicateUsernameException e) {
+            // Handle the case where a duplicate username is detected
+            model.addAttribute("error", e.getMessage());
+            return "inscription"; // Return to the inscription page with an error message
+        }
 	}
 
 	@PostMapping("/connected")
 	public String ConnectionCustomer(@RequestParam String username, @RequestParam String password) {
-		// Create a new product instance
-		//Customer newCustomer = new Customer(username, password);
-
-		
-		// If a customer is found, return true; otherwise, return false
 		if(customerService.connectionCustomer(username,password)) {
 			return "redirect:/customer/connected";
 		}else{
@@ -60,7 +64,7 @@ public class CustomerController {
 	}
 	
 	@GetMapping("/connected")
-	public String pageConnected(Model model) {
+	public String pageConnected() {
        
         return "connected";
     }
