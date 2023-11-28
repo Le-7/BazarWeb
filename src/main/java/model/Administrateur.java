@@ -41,6 +41,9 @@ public class Administrateur {
 		this.password = password;
 	}
 
+	public Administrateur () {
+		
+	}
 	public Administrateur(String username, String password) {
 		super();
 		this.username = username;
