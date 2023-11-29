@@ -12,13 +12,23 @@ public class Product {
     private Long id;
     private String name;
     private double price;
+    private String image;
     
-    public Product() {
+    public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public Product() {
     }
     
-    public Product(String productName, double productPrice) {
+    public Product(String productName, double productPrice, String productImage) {
         this.name = productName;
         this.price = productPrice;
+        this.image = productImage;
     }
 	public Long getId() {
 		return id;
