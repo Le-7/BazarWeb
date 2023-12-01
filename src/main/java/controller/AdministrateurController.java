@@ -95,6 +95,14 @@ public class AdministrateurController {
 		return "infoModerateur";
 	}
 	
+
+	@PostMapping("modifproduct")
+	public String page() {
+
+		return "redirect:/product/product";
+		
+	}
+	
 	@PostMapping("/connected")
 	public String ConnectionCustomer(@RequestParam String username, @RequestParam String password,Model model) {
 		if(administrateurService.connectionAdministrateur(username,password)) {

@@ -109,6 +109,20 @@
         .cif-container input[type="submit"]:hover {
             background-color: #c0392b;
         }
+        .product {
+            background-color: orangered;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+  body {
+            text-align: center;
+        }
+ 
     </style>
 </head>
 <body>
@@ -136,46 +150,11 @@
     </th:block>
 </ul>
 
-    <h2>Ajouter un produit</h2>
-    <form action="AdministrateurConrolleur/add" method="POST">
-        <label for="name">Nom du produit:</label>
-        <input type="text" name="name" id="name" required><br>
+    <h2>Ajouter ou supprimer  un produit</h2>
+    <form action="modifproduct" method="POST">
+		
+<button name="product" class="product" type="submit">Ajouter ou supprimer  un produit</button>		
+		</form>
 
-        <label for="description">Description du produit:</label>
-        <textarea name="description" id="description"></textarea><br>
-
-        <label for="price">Prix du produit:</label>
-        <input type="number" name="price" id="price" step="0.01" required><br>
-
-        <label for="stock_quantity">Quantité en stock:</label>
-        <input type="number" name="stock_quantity" id="stock_quantity" required><br>
-        
-        <label for="category_id">Catégorie :</label>
-        <input type="text" name="category_id" id="category_id" required><br>
-        
-		<label for="category_id">Lien de l'image :</label>
-        <input type="text" name="image" id="image" required><br>
-        <input type="submit" value="Ajouter le produit">
-    </form>
-
-    <form action="AdministrateurControlleur/supress" method="POST">
-        <h2>Supprimer un produit : </h2>
-        <label for="recherche">Rechercher un produit :</label>
-        <input type="text" id="recherche" name="recherche">
-        <input type="submit" value="Rechercher">
-    </form>
-
-    <!-- Results of the product search -->
-    <h2>Résultats de la recherche :</h2>
-    <table border="1">
-        <tr>
-            <th>ID du produit</th>
-            <th>Nom du produit</th>
-            <th>Description</th>
-            <th>Stock restant</th>
-            <th>Action</th>
-        </tr>
-        <!-- Product Results -->
-    </table>
 </body>
 </html>
