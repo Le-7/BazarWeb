@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connection BazarWeb</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+<header class="banner">
+		<div class="top-nav">
+			<div class="logo">BazarWeb</div>
+			<div class="search-bar">
+				<input type="text" placeholder="Rechercher des produits">
+				<button type="button">Rechercher</button>
+			</div>
+			<div class="user-actions">
+				<a href="#">Mon Compte</a> <a href="#">Panier</a>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="/">Accueil</a></li>
+				<li><a href="#">Catégories</a></li>
+				<li><a href="#">Meilleures ventes</a></li>
+				<li><a href="/customer/inscription">Inscription</a></li>
+			</ul>
+		</nav>
+	</header>
+<div class="container">
+    <h2>Connectez vous en tant que modérateur! </h2>
+    <form action="/product/productModo" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"  required>
+        <br>
+            
+        
+        <button type="submit">Connexion</button>
+    </form>
+
+ 
+    </div>
+    <footer class="footer">
+		<div class="footer-content">
+			<div class="footer-section">
+				<h3>À Propos</h3>
+				<p>Notre entreprise</p>
+				<p>Carrières</p>
+				<p>Contactez-nous</p>
+			</div>
+			<div class="footer-section">
+				<h3>Services</h3>
+				<p>Livraison</p>
+				<p>Retours</p>
+				<p>Aide en ligne</p>
+			</div>
+			<div class="footer-section">
+				<h3>Informations Légales</h3>
+				<p>Conditions d'utilisation</p>
+				<p>Politique de confidentialité</p>
+			</div>
+		</div>
+		<div class="copyright">
+			<p>2023 BazarWeb Tous droits réservés.</p>
+		</div>
+	</footer>
+</body>
+</html>

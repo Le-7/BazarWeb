@@ -27,4 +27,8 @@ public class ProductService {
     public void deleteProduct(Long productId) {
         productRepository.deleteById(productId);
     }
+
+	public List<Product> getAllProductsModo(String username) {
+		// TODO Auto-generated method stub
+		return productRepository.findByModerateur(username);	}
 }

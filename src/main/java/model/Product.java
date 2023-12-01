@@ -13,6 +13,7 @@ public class Product {
     private String name;
     private double price;
     private String image;
+    private String moderateur;
     
     public String getImage() {
 		return image;
@@ -30,6 +31,14 @@ public class Product {
         this.price = productPrice;
         this.image = productImage;
     }
+	public Product(String productName, double productPrice, String productImage, String username) {
+		// TODO Auto-generated constructor stub
+		this.name = productName;
+        this.price = productPrice;
+        this.image = productImage;
+        this.moderateur=username;
+	}
+
 	public Long getId() {
 		return id;
 	}
