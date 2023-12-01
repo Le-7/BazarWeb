@@ -1,5 +1,6 @@
 package service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,11 @@ public class CustomerService {
         // If a customer is found, return true; otherwise, return false
         return optionalCustomer.isPresent();
     }
+
+	public static List<Customer> getAllClients() {
+		return customerRepository.findAll();
+		// TODO Auto-generated method stub
+	}
 
     
     
