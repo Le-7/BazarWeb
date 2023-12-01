@@ -126,9 +126,15 @@
 </ul>
 
     <h2>Liste des modérateurs</h2>
-    <ul>
-        <!-- Moderator List -->
-    </ul>
+<ul>
+    <!-- Using Thymeleaf to iterate over clients -->
+    <th:block th:each="moderateur : ${moderateurs}">
+        <form th:action="infoModo" method="post">
+            <input type="hidden" name="username" th:value="${moderateur.username}">
+            <input type="submit" th:value="${moderateur.username}">
+        </form>
+    </th:block>
+</ul>
 
     <h2>Ajouter un produit</h2>
     <form action="AdministrateurConrolleur/add" method="POST">

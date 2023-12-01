@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Client Information</title>
+  <title>moderateur Information</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -75,20 +75,17 @@
     <div class="user-container">
       <div class="user-details">
         <label for="username">Nom d'utilisateur:</label>
-        <span th:text="${client.username}"></span>
+        <span th:text="${moderateur.username}"></span>
       </div>
-      <div class="user-details">
-        <label for="email">Email:</label>
-        <span th:text="${client.email}"></span>
-      </div>
+
       <div class="user-details">
         <label for="password">Mot de passe:</label>
-        <span th:text="${client.password}"></span>
+        <span th:text="${moderateur.password}"></span>
       </div>
     </div>
-    <form class="delete-form" action="SupprimerClient" method="post">
-      <input type="hidden" name="username" th:value="${client.username}">
-      <button class="delete-button" type="submit">Supprimer le client de la base de données</button>
+    <form class="delete-form" action="SupprimerModerateur" method="post">
+      <input type="hidden" name="username" th:value="${moderateur.username}">
+      <button class="delete-button" type="submit">Supprimer le moderateur de la base de données</button>
     </form>
   </div>
 </body>

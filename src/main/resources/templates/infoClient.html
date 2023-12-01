@@ -1,11 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Information</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .user-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 50px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .user-details {
+      margin-bottom: 20px;
+    }
+
+    .user-details label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .user-details span {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .delete-button {
+      background-color: #dc3545;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .delete-button:hover {
+      background-color: #c82333;
+    }
+
+    .delete-form {
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
-voici les infos du clients : 
-
+  <div class="container">
+    <div class="user-container">
+      <div class="user-details">
+        <label for="username">Nom d'utilisateur:</label>
+        <span th:text="${client.username}"></span>
+      </div>
+      <div class="user-details">
+        <label for="email">Email:</label>
+        <span th:text="${client.email}"></span>
+      </div>
+      <div class="user-details">
+        <label for="password">Mot de passe:</label>
+        <span th:text="${client.password}"></span>
+      </div>
+    </div>
+    <form class="delete-form" action="SupprimerClient" method="post">
+      <input type="hidden" name="username" th:value="${client.username}">
+      <button class="delete-button" type="submit">Supprimer le client de la base de données</button>
+    </form>
+  </div>
 </body>
 </html>

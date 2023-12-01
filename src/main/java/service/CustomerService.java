@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import model.Customer;
+import model.Moderator;
 import repository.CustomerRepository;
 
 @Service
@@ -23,6 +24,9 @@ public class CustomerService {
     @Autowired
     public CustomerService(CustomerRepository customerRepository) {
         CustomerService.customerRepository = customerRepository;
+    }
+    public Customer getClientByUsername(String username) {
+        return customerRepository.findByUsername(username);
     }
 
     public void inscriptionCustomer(Customer customer) {
@@ -50,6 +54,13 @@ public class CustomerService {
 		return customerRepository.findAll();
 		// TODO Auto-generated method stub
 	}
+	public void deleteClient(Customer client) {
+		// TODO Auto-generated method stub
+		 if (client != null) {
+	            customerRepository.delete(client);
+	        }
+	}
+
 
     
     
