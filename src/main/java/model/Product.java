@@ -12,9 +12,17 @@ public class Product {
     private Long id;
     private String name;
     private double price;
-    private String image;
+	private String image;
     private String moderateur;
     
+    public String getModerateur() {
+  		return moderateur;
+  	}
+
+  	public void setModerateur(String moderateur) {
+  		this.moderateur = moderateur;
+  	}
+  	
     public String getImage() {
 		return image;
 	}

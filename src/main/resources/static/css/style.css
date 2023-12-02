@@ -162,6 +162,7 @@ form button:hover {
     color: #fff;
     margin-top: 20px; 
 }
+
 /* Product Styles */
 .product-list {
     display: flex;
@@ -169,10 +170,10 @@ form button:hover {
 }
 
 .product {
-    width: 200px;
-    height: 350px; /* Set a fixed height for the product card */
+    width: 250px; /* Adjusted width for better layout */
+    height: 400px; /* Adjusted height for better layout */
     margin-bottom: 20px;
-    margin-left: 35px;
+    margin-left: 20px; /* Reduced margin for better spacing */
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -189,25 +190,25 @@ form button:hover {
 
 .product img {
     width: 100%;
-    height: 100%; 
-    object-fit: cover; 
+    height: 200px; /* Adjusted height for better image display */
+    object-fit: cover;
     border-bottom: 1px solid #ddd;
 }
 
 .product h3 {
     padding: 10px;
-    font-size: 1em;
+    font-size: 1.2em; /* Increased font size for better readability */
     color: #333;
 }
 
 .product p {
-    padding: 0 10px 10px;
-    font-size: 0.8em;
+    flex-grow: 1; /* Allow the description to take available space */
+    padding: 10px;
+    font-size: 0.9em; /* Adjusted font size for better readability */
     color: #666;
 }
 
 .product .price {
-    display: block;
     padding: 0 10px;
     color: #007bff;
     font-weight: bold;

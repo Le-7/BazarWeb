@@ -30,9 +30,9 @@
 
 	<main>
     <section class="featured-products">
-        <h2>Produits en Vedette</h2>
+        <h2>Résultats de la recherche</h2>
         <div class="product-list">
-            <!-- Loop through products and display dynamically -->
+            <!-- Loop through search results and display dynamically -->
             <div th:each="product : ${products}" class="product">
                 <img th:src="${'img/'+ product.image}" alt="Product Image">
                 <h3 th:text="${product.name}">Nom du Produit</h3>

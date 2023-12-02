@@ -12,6 +12,6 @@ import model.Product;
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
 	List<Product> findByModerateur(String username);
-    // You can add custom queries if needed
+    List<Product> findByNameContainingIgnoreCase(String keyword);
 }
 
