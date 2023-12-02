@@ -11,9 +11,9 @@
 		<div class="top-nav">
 			<div class="logo">BazarWeb</div>
 			<div class="search-bar">
-				<input type="text" placeholder="Rechercher des produits">
-				<button type="button">Rechercher</button>
-			</div>
+    <input id="searchInput" type="text" placeholder="Rechercher des produits">
+    <button type="button" onclick="searchProducts()">Rechercher</button>
+</div>
 			<div class="user-actions">
 				<a href="#">Mon Compte</a> <a href="#">Panier</a>
 			</div>
@@ -62,6 +62,14 @@
 		</div>
 	</footer>
 
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    function searchProducts() {
+        var searchKeyword = document.getElementById('searchInput').value;
+        window.location.href = '/search?keyword=' + encodeURIComponent(searchKeyword);
+    }
+    /*]]>*/
+</script>
 
 </body>
 </html>

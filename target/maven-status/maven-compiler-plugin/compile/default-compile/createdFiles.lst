@@ -11,6 +11,7 @@ repository/ProductRepository.class
 service/AdministrateurService.class
 model/Customer.class
 service/DuplicateUsernameException.class
+controller/SearchController.class
 model/Order.class
 controller/CustomerController.class
 repository/ModeratorRepository.class
