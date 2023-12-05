@@ -10,6 +10,7 @@ import repository.ProductRepository;  // Import ProductRepository
 public class ProductService {
 
     private final ProductRepository productRepository;
+   
 
     @Autowired
     public ProductService(ProductRepository productRepository) {

@@ -7,6 +7,7 @@
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/controller/SearchController.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/controller/HomeController.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/service/AdministrateurService.java
+/home/cytech/eclipse-workspace/BazarWeb/src/main/java/service/EmailService.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/service/OrderService.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/service/DuplicateUsernameException.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/repository/OrderRepository.java

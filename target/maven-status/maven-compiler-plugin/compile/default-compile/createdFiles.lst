@@ -1,5 +1,6 @@
 service/CustomerService.class
 service/ProductService.class
+service/EmailService.class
 model/Product.class
 repository/CustomerRepository.class
 model/Administrateur.class

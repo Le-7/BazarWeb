@@ -11,19 +11,17 @@ import model.Moderator;
 import repository.CustomerRepository;
 
 @Service
-public class CustomerService {
-	
-	
-
-	
-	
+public class CustomerService {	
 	
     @Autowired
     private static CustomerRepository customerRepository;
+    private final EmailService emailService;
 
     @Autowired
-    public CustomerService(CustomerRepository customerRepository) {
+    public CustomerService(CustomerRepository customerRepository, EmailService emailService) {
         CustomerService.customerRepository = customerRepository;
+        this.emailService = emailService;
+        
     }
     public Customer getClientByUsername(String username) {
         return customerRepository.findByUsername(username);
@@ -36,6 +34,7 @@ public class CustomerService {
         }
 
     	customerRepository.save(customer);
+	   	emailService.sendEmail(customer.getEmail(), "Merci de votre inscription !", "Merci beaucoup "+customer.getUsername()+" de votre inscription chez BazarWeb !");
     }
     
 
