@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BazarWeb</title>
 <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+ <style>
+        .order-item img {
+            max-width: 100px; 
+            max-height: 100px; 
+        }
+    </style>
 </head>
 <body>
 	<header class="banner">
@@ -27,11 +33,23 @@
 		</nav>
 	</header>
 
-	<main>
-		<section class="featured-products">
-			<p>Merci de vous etes connect&eacute; !</p>
-		</section>
-	</main>
+	 <main>
+        <section class="order-details">
+            <h2>Details du panier</h2>
+            <div class="order-info">
+                <p th:text="'ID du panier: ' + ${order.id}"></p>
+                <p th:text="'Montant total: $' + ${order.totalAmount}"></p>
+            </div>
+            <div class="order-items">
+                <h3>Produits dans le panier</h3>
+                <div th:each="item : ${order.products}" class="order-item">
+                    <img th:src="${'../img/'+ item.image}" alt="Product Image">
+                    <h4 th:text="${item.name}">Product Name</h4>
+                    <span class="price" th:text="'$' + ${item.price}">Price</span>
+                </div>
+            </div>
+        </section>
+    </main>
 
 	<footer class="footer">
 		<div class="footer-content">

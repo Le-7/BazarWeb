@@ -2,7 +2,8 @@ package service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import repository.CarteBancaireRepository;
+import model.CarteBancaire;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -43,7 +44,7 @@ public class CarteBancaireService {
     }
 
     private boolean proprietaireValide(CarteBancaire carte, String nomProprietaire) {
-        return carte.getNomProprietaire().equals(nomProprietaire);
+        return carte.getTitulaire().equals(nomProprietaire);
     }
 
     private boolean dateExpirationValide(CarteBancaire carte, LocalDate dateExpiration) {

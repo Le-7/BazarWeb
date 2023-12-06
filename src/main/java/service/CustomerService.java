@@ -60,9 +60,8 @@ public class CustomerService {
 	        }
 	}
 
+	public Customer getCustomerById(Long userId) {
+	    return customerRepository.findById(userId).orElse(null);
+	}
 
-    
-    
-    
-    // service methods
 }

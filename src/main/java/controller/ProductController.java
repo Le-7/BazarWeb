@@ -33,8 +33,8 @@ public class ProductController {
     @PostMapping("/addProductModo")
     public String addProductmodo(@RequestParam String productName,
                              @RequestParam double productPrice,
-                             @RequestParam String productImage,@RequestParam String username,@RequestParam String password,Model model) {
-        Product newProduct = new Product(productName, productPrice, productImage, username);
+                             @RequestParam String productImage,@RequestParam int stock,@RequestParam String username,@RequestParam String password,Model model) {
+        Product newProduct = new Product(productName, productPrice, productImage, username,stock);
         productService.addProduct(newProduct);
         model.addAttribute("username",username);
         model.addAttribute("password",password);

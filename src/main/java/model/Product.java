@@ -14,6 +14,8 @@ public class Product {
     private double price;
 	private String image;
     private String moderateur;
+    private int stock;
+    
     
     public String getModerateur() {
   		return moderateur;
@@ -39,12 +41,21 @@ public class Product {
         this.price = productPrice;
         this.image = productImage;
     }
-	public Product(String productName, double productPrice, String productImage, String username) {
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
+	public Product(String productName, double productPrice, String productImage, String username, int stock) {
 		// TODO Auto-generated constructor stub
 		this.name = productName;
         this.price = productPrice;
         this.image = productImage;
         this.moderateur=username;
+        this.stock = stock;
 	}
 
 	public Long getId() {

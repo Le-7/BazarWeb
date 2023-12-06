@@ -19,6 +19,7 @@ public class HomeController {
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("products", productService.getAllProducts());
-        return "index"; // Return the name of the home page template (index.html)
+        model.addAttribute("userId", 8);
+        return "index"; 
     }
 }
