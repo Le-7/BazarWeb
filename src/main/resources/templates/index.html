@@ -16,9 +16,9 @@
                 <button type="button" onclick="searchProducts()">Rechercher</button>
             </div>
 			<div class="user-actions">
-				<a href="/customer/connection">Mon Compte</a> 
-                <!-- Pass the user ID as a Thymeleaf variable -->
-                <a th:href="@{'/order/' + ${userId}}">Panier</a>
+				<a th:if="${userId == null}" href="/customer/connection">Connexion</a>
+            	<a th:if="${userId != null}" href="/customer/showuserinfo">Mon Compte</a>
+               <a th:if="${userId != null}" th:href="@{'/order/' + ${userId}}">Panier</a>
 			</div>
 		</div>
 		<nav>
@@ -40,7 +40,7 @@
                 <span class="price" th:text="'$' + ${product.price}">Price</span>
                 <p th:text="${'Vendue par ' + product.moderateur}"></p>
                 <!-- Pass the user ID as a data attribute -->
-                <button type="button" class="add-to-cart-btn" th:data-product-id="${product.id}" th:data-user-id="${userId}">Ajouter au Panier</button>
+                <button th:if="${userId != null}" type="button" class="add-to-cart-btn" th:data-product-id="${product.id}" th:data-user-id="${userId}">Ajouter au Panier</button>
             </div>
         </div>
     </section>
@@ -93,11 +93,11 @@
                 data: { productId: productId, userId: userId },
                 success: function(response) {
                     // Handle the success response, e.g., show a success message
-                    alert("Product added to cart successfully!");
+                    alert("Produit bien ajouté au panier!");
                 },
                 error: function(error) {
                     // Handle the error response, e.g., show an error message
-                    alert("Failed to add product to cart!");
+                    alert("Erreur dans l'ajout du produit!");
                 }
             });
         });

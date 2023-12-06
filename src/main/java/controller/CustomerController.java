@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import service.DuplicateUsernameException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 
 import model.Customer;
 import service.CustomerService;
@@ -47,11 +50,14 @@ public class CustomerController {
 	}
 
 	@PostMapping("/connected")
-	public String ConnectionCustomer(@RequestParam String username, @RequestParam String password) {
+	public String ConnectionCustomer(@RequestParam String username, @RequestParam String password, HttpSession session, Model model) {
 		if(customerService.connectionCustomer(username,password)) {
+			Long userId = customerService.getClientByUsername(username).getId();
+		    session.setAttribute("userId", userId);
+		    model.addAttribute("userId", userId);
 			return "redirect:/customer/connected";
 		}else{
-			return "redirect:/customer/inscription";
+			return "redirect:/customer/inscription?error=1";
 		}
 	}
 
@@ -65,8 +71,29 @@ public class CustomerController {
 	}
 	
 	@GetMapping("/connected")
-	public String pageConnected() {
-       
+	public String pageConnected(Model model, HttpServletRequest request) {
+		Long userId = (Long) request.getSession().getAttribute("userId");
+		model.addAttribute("userId", userId);
         return "connected";
     }
+	 @GetMapping("/showuserinfo")
+	    public String showUserInfo(HttpSession session, Model model) {
+	        // Vérifier si l'utilisateur est connecté en vérifiant la présence de "userId" dans la session
+	        Long userId = (Long) session.getAttribute("userId");
+
+	        if (userId != null) {
+	            // Si l'utilisateur est connecté, récupérer les informations du client
+	            Customer user = customerService.getCustomerById(userId);
+
+	            // Ajouter les informations du client au modèle
+	            model.addAttribute("user", user);
+	            model.addAttribute("userId", userId);
+	            // Retourner la vue pour afficher les informations de l'utilisateur
+	            return "showuserinfo";
+	        } else {
+	            // Si l'utilisateur n'est pas connecté, rediriger vers la page de connexion
+	            return "redirect:/customer/connection";
+	        }
+	    }
+
 }

@@ -11,12 +11,13 @@
 		<div class="top-nav">
 			<div class="logo">BazarWeb</div>
 			<div class="search-bar">
-				<input id="searchInput" type="text"
-					placeholder="Rechercher des produits">
-				<button type="button" onclick="searchProducts()">Rechercher</button>
-			</div>
+                <input id="searchInput" type="text" placeholder="Rechercher des produits">
+                <button type="button" onclick="searchProducts()">Rechercher</button>
+            </div>
 			<div class="user-actions">
-				<a href="#">Mon Compte</a> <a href="#">Panier</a>
+				<a th:if="${userId == null}" href="/customer/connection">Connexion</a>
+            	<a th:if="${userId != null}" href="/customer/showuserinfo">Mon Compte</a>
+               <a th:if="${userId != null}" th:href="@{'/order/' + ${userId}}">Panier</a>
 			</div>
 		</div>
 		<nav>
@@ -26,6 +27,7 @@
 			</ul>
 		</nav>
 	</header>
+
 
 	<main>
 		<section class="featured-products">
