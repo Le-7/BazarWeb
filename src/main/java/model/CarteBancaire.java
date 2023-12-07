@@ -16,13 +16,13 @@ public class CarteBancaire {
     private double solde;
     private String numeroCarte;
     private String titulaire;
-    private LocalDate dateExpiration;
+    private String dateExpiration;
     private int codeSecurite;
 
     public CarteBancaire() {
     }
 
-    public CarteBancaire(double solde ,String numeroCarte, String titulaire, LocalDate dateExpiration, int codeSecurite) {
+    public CarteBancaire(double solde ,String numeroCarte, String titulaire, String dateExpiration, int codeSecurite) {
         this.solde = solde;
     	this.numeroCarte = numeroCarte;
         this.titulaire = titulaire;
@@ -58,11 +58,11 @@ public class CarteBancaire {
         this.titulaire = titulaire;
     }
 
-    public LocalDate getDateExpiration() {
+    public String getDateExpiration() {
         return dateExpiration;
     }
 
-    public void setDateExpiration(LocalDate dateExpiration) {
+    public void setDateExpiration(String dateExpiration) {
         this.dateExpiration = dateExpiration;
     }
 

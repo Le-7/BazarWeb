@@ -25,18 +25,21 @@ public class CarteBancaireService {
         return carteBancaireRepository.findByNumeroCarte(numeroCarte) != null;
     }
 
-    public void mettreAJourSolde(String numeroCarte, int codeSecurite, double montant, String nomProprietaire, LocalDate dateExpiration) {
+    public int mettreAJourSolde(String numeroCarte, int codeSecurite, double montant, String nomProprietaire, String dateExpiration) {
         CarteBancaire carte = carteBancaireRepository.findByNumeroCarte(numeroCarte);
 
         if (carte != null &&
             codeSecuriteValide(carte, codeSecurite) &&
             proprietaireValide(carte, nomProprietaire) &&
-            dateExpirationValide(carte, dateExpiration)) {
+            dateExpirationValide(carte, dateExpiration) &&
+            carte.getSolde() > montant) {
 
-            double nouveauSolde = carte.getSolde() + montant;
+            double nouveauSolde = carte.getSolde() - montant;
             carte.setSolde(nouveauSolde);
             carteBancaireRepository.save(carte);
+            return 0;
         }
+        else return 404;
     }
 
     private boolean codeSecuriteValide(CarteBancaire carte, int codeSecurite) {
@@ -47,7 +50,7 @@ public class CarteBancaireService {
         return carte.getTitulaire().equals(nomProprietaire);
     }
 
-    private boolean dateExpirationValide(CarteBancaire carte, LocalDate dateExpiration) {
+    private boolean dateExpirationValide(CarteBancaire carte, String dateExpiration) {
         return carte.getDateExpiration().equals(dateExpiration);
     }
 }

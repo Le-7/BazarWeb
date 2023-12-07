@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BazarWeb</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+	<header class="banner">
+		<div class="top-nav">
+			<div class="logo">BazarWeb</div>
+			<div class="search-bar">
+                <input id="searchInput" type="text" placeholder="Rechercher des produits">
+                <button type="button" onclick="searchProducts()">Rechercher</button>
+            </div>
+			<div class="user-actions">
+				<a th:if="${userId == null}" href="/customer/connection">Connexion</a>
+            	<a th:if="${userId != null}" href="/customer/showuserinfo">Mon Compte</a>
+               <a th:if="${userId != null}" th:href="@{'/order/' + ${userId}}">Panier</a>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="/">Accueil</a></li>
+				<li><a href="/customer/inscription">Inscription</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	 <main>
+        <section class="payment-confirmation">
+            <h2>Payment Confirmation</h2>
+            <p th:text="'Merci pour votre paiement de  $' + ${amountPaid} + ' en utilisant la carte ' + ${cardNumber}"></p>
+          
+        </section>
+    </main>
+
+	<footer class="footer">
+		<div class="footer-content">
+			<div class="footer-section">
+				<h3>À Propos</h3>
+				<p>Notre entreprise</p>
+				<p>Carrières</p>
+				<p>Contactez-nous</p>
+			</div>
+			<div class="footer-section">
+				<h3>Services</h3>
+				<p>Livraison</p>
+				<p>Retours</p>
+				<p>Aide en ligne</p>
+			</div>
+			<div class="footer-section">
+				<h3>Informations Légales</h3>
+				<p>Conditions d'utilisation</p>
+				<p>Politique de confidentialité</p>
+			</div>
+		</div>
+		<div class="copyright">
+			<p>2023 BazarWeb Tous droits réservés.</p>
+		</div>
+	</footer>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    function searchProducts() {
+        var searchKeyword = document.getElementById('searchInput').value;
+        window.location.href = '/search?keyword=' + encodeURIComponent(searchKeyword);
+    }
+    /*]]>*/
+</script>
+<script th:inline="javascript">
+    $(document).ready(function() {
+        // Attach a click event handler to all add-to-cart buttons
+        $(".add-to-cart-btn").click(function() {
+            // Get the product ID and user ID from the data attributes
+            var productId = $(this).data("product-id");
+            var userId = $(this).data("user-id");
+
+            // Make an AJAX request to add the product to the cart
+            $.ajax({
+                type: "POST",
+                url: "/order/addProductToCart",
+                data: { productId: productId, userId: userId },
+                success: function(response) {
+                    // Handle the success response, e.g., show a success message
+                    alert("Produit bien ajouté au panier!");
+                },
+                error: function(error) {
+                    // Handle the error response, e.g., show an error message
+                    alert("Erreur dans l'ajout du produit!");
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

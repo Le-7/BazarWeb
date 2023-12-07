@@ -127,4 +127,27 @@ public class OrderService {
             }
         });
     }
+   
+    @Transactional
+    public void clearUserCart(Long userId) {
+        // Retrieve the user's order
+        Order userOrder = getUserOrder(userId);
+
+        // Retrieve products from the user's order
+        List<Product> productsInCart = userOrder.getProducts();
+
+        // Restore stock for each product in the user's cart
+        productsInCart.forEach(product -> {
+            int currentStock = product.getStock();
+            product.setStock(currentStock - 1);
+            productRepository.save(product);
+        });
+
+        // Clear the user's order (remove products and reset total amount)
+        userOrder.getProducts().clear();
+        userOrder.setTotalAmount(0.0);
+
+        // Save the updated user's order
+        orderRepository.save(userOrder);
+    }
 }

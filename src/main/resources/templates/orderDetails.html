@@ -50,6 +50,26 @@
                 </div>
             </div>
         </section>
+        <section class="payment-section">
+        <h2>Procéder au paiement</h2>
+        <p th:text="'Montant total à payer: $' + ${order.totalAmount}"></p>
+        <form action="/order/payment" method="post">
+            <!-- Ajoutez vos champs pour le paiement ici (code de la carte, date, code de sécurité) -->
+            <label for="cardNumber">Numéro de la carte:</label>
+            <input type="text" id="cardNumber" name="cardNumber" required>
+
+            <label for="expiryDate">Date d'expiration:</label>
+            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YYYY" required>
+
+            <label for="securityCode">Code de sécurité:</label>
+            <input type="text" id="securityCode" name="securityCode" required>
+            <input type="hidden" id="userId" name="userId" th:value="${userId}" />
+            <input type="hidden" id="amount" name="amount" th:value="${order.totalAmount}" />
+            
+
+            <button type="submit">Payer</button>
+        </form>
+    </section>
     </main>
 
 	<footer class="footer">
