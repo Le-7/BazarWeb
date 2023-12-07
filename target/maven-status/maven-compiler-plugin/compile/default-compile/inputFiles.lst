@@ -15,6 +15,7 @@
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/model/Moderator.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/model/Product.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/controller/ModeratorController.java
+/home/cytech/eclipse-workspace/BazarWeb/src/main/java/model/CarteBancaire.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/repository/ProductRepository.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/repository/CustomerRepository.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/controller/CustomErrorController.java
@@ -22,5 +23,7 @@
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/BazarWeb.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/controller/AdministrateurController.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/service/ModeratorService.java
+/home/cytech/eclipse-workspace/BazarWeb/src/main/java/repository/CarteBancaireRepository.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/controller/ProductController.java
 /home/cytech/eclipse-workspace/BazarWeb/src/main/java/repository/AdministrateurRepository.java
+/home/cytech/eclipse-workspace/BazarWeb/src/main/java/service/CarteBancaireService.java

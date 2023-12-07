@@ -23,6 +23,9 @@
             <label for="productImage">Image Name:</label>
             <input type="text" id="productImage" name="productImage" required>
             <br>
+            <label for="stock">Product Stock:</label>
+            <input type="number" id="stock" name="stock" step="1" required>
+            <br>
           <input type="hidden" name="username" th:value="${username}" />
           <input type="hidden" name="password" th:value="${password}" />
 

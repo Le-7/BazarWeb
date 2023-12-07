@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -5,6 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BazarWeb</title>
 <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<style>
+.order-item img {
+	max-width: 100px;
+	max-height: 100px;
+}
+</style>
 </head>
 <body>
 	<header class="banner">
@@ -28,23 +35,21 @@
 		</nav>
 	</header>
 
-
 	<main>
-    <section class="featured-products">
-        <h2>Résultats de la recherche</h2>
-        <div class="product-list">
-            <!-- Loop through search results and display dynamically -->
-            <div th:each="product : ${products}" class="product">
-                <img th:src="${'img/'+ product.image}" alt="Product Image">
-                <h3 th:text="${product.name}">Nom du Produit</h3>
-                <span class="price" th:text="'$' + ${product.price}">Price</span>
-                <p th:text="${'Vendue par ' + product.moderateur}"></p>
-                <button type="button">Ajouter au Panier</button>
-            </div>
-        </div>
-    </section>
-</main>
 
+		<section class="user-info">
+			<h2>Informations sur l'utilisateur</h2>
+			<div th:if="${user != null}">
+				<p th:text="'ID utilisateur: ' + ${user.id}"></p>
+				<p th:text="'Nom d\'utilisateur: ' + ${user.username}"></p>
+				<p th:text="'Email: ' + ${user.email}"></p>
+
+			</div>
+			<div th:unless="${user != null}">
+				<p>Aucune information sur l'utilisateur n'est disponible.</p>
+			</div>
+		</section>
+	</main>
 
 	<footer class="footer">
 		<div class="footer-content">
@@ -70,14 +75,15 @@
 			<p>2023 BazarWeb Tous droits réservés.</p>
 		</div>
 	</footer>
-<script th:inline="javascript">
-    /*<![CDATA[*/
-    function searchProducts() {
-        var searchKeyword = document.getElementById('searchInput').value;
-        window.location.href = '/search?keyword=' + encodeURIComponent(searchKeyword);
-    }
-    /*]]>*/
-</script>
+	<script th:inline="javascript">
+		/*<![CDATA[*/
+		function searchProducts() {
+			var searchKeyword = document.getElementById('searchInput').value;
+			window.location.href = '/search?keyword='
+					+ encodeURIComponent(searchKeyword);
+		}
+		/*]]>*/
+	</script>
 
 </body>
 </html>
