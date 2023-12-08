@@ -190,7 +190,7 @@ form button:hover {
 
 .product img {
     width: 100%;
-    height: 200px; /* Adjusted height for better image display */
+    height: 100px; /* Adjusted height for better image display */
     object-fit: cover;
     border-bottom: 1px solid #ddd;
 }
